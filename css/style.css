@@ -37,7 +37,7 @@
 
   #app {
     background-color: #454555;
-    height: 50vh;
+    height: 100vh;
     overflow: hidden;
   }
   #app.list-toggled #crypto-list {
