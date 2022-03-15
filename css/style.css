@@ -34,10 +34,10 @@
     margin: 0px;
     padding: 0px;
   }
-  
+
   #app {
     background-color: #454555;
-    height: 100vh;
+    height: 800px; /* 100vh */
     overflow: hidden;
   }
   #app.list-toggled #crypto-list {
