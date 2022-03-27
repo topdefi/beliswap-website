@@ -488,8 +488,17 @@
                         </div>
 
                         <!-- Feature image -->
-                        <div class="column is-7">
-                            <img class="side-feature" src="/img/illustrations/krypton-token-network.svg" alt="">
+                        <div class="slideshow-container column is-7">
+                            <div class="mySlides3">
+                                <img src="/img/slider/Belipay_mobile_pay.png" style="width:50%">
+                            </div>
+                            
+                            <div class="mySlides3">
+                                <img src="/img/slider/Belipay_mobile_donate.png" style="width:50%">
+                            </div>
+                        
+                            <a class="prev" onclick="plusSlides(-1, 2)">&#10094;</a>
+                            <a class="next" onclick="plusSlides(1, 2)">&#10095;</a>
                         </div>
                     </div>
 
@@ -609,9 +618,10 @@
     <script>
         var slideIndex = [1,1];
         /* Class the members of each slideshow group with different CSS classes */
-        var slideId = ["mySlides1", "mySlides2"]
+        var slideId = ["mySlides1", "mySlides2", "mySlides3"]
         showSlides(1, 0);
         showSlides(1, 1);
+        showSlides(1, 2);
 
         function plusSlides(n, no) {
         showSlides(slideIndex[no] += n, no);
