@@ -12395,7 +12395,7 @@ print {
 }
 
 .hero .navbar {
-    background: #292933 /* none */
+    background: rgba(0,0,0,0.1) /* none */
 }
 
 .hero .tabs ul {
