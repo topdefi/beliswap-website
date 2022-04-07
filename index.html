@@ -18,7 +18,7 @@
     <!-- Image Slider -->
     <style>
         * {box-sizing: border-box}
-        .mySlides1, .mySlides2, .mySlides3 {display: none}
+        .mySlides2, .mySlides3 {display: none}
         img {vertical-align: middle;}
 
         /* Slideshow container */
@@ -80,7 +80,6 @@
             background-color: #555;
         }
     </style>
-
     <!-- Text Box -->
     <style>
         .text-block {
@@ -151,6 +150,10 @@
                                 </div>
                                 <!-- Menu item -->
                                 <div class="navbar-item is-nav-link">
+                                    <a class="is-centered-responsive" href="roadmap.html">Roadmap</a>
+                                </div>
+                                <!-- Menu item -->
+                                <div class="navbar-item is-nav-link">
                                     <a class="is-centered-responsive" href="team.html">Team</a>
                                 </div>
                                 <!-- Menu item -->
@@ -215,6 +218,10 @@
                                 </div>
                                 <!-- Menu item -->
                                 <div class="navbar-item is-nav-link">
+                                    <a class="is-centered-responsive" href="roadmap.html">Roadmap</a>
+                                </div>
+                                <!-- Menu item -->
+                                <div class="navbar-item is-nav-link">
                                     <a class="is-centered-responsive" href="team.html">Team</a>
                                 </div>
                                 <!-- Menu item -->
@@ -240,42 +247,16 @@
             <!--
             <div x-data="initHero()" x-init="initParticles()" id="particles-js"></div>
             -->
-
-            <!-- Hero Image and Title -->
-            <!--
-            <div class="hero-body">
-                <div class="container">
-                    <div class="columns is-vcentered">
-
-                        <div class="slideshow-container column is-12">
-
-                            <div class="mySlides1">
-                                <img src="/img/slider/slider-1.jpg" style="width:100%">
-                            </div>
-                            
-                            <div class="mySlides1">
-                            <img src="/img/slider/slider-2.jpg" style="width:100%">
-                            </div>
-                        
-                            <a class="prev" onclick="plusSlides(-1, 0)">&#10094;</a>
-                            <a class="next" onclick="plusSlides(1, 0)">&#10095;</a>
-                            
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            -->
     
             <!-- Hero Image and Title -->
-            <div class="hero-body" style="background-image: url('img/bg/bg.svg');background-repeat: no-repeat;background-size: cover;background-attachment: fixed;background-position: center;background-size: 100%;">
+            <div class="hero-body" style="background-image: url('bg.svg');background-repeat: no-repeat;background-size: cover;background-attachment: fixed;background-position: center;background-size: 100%;">
                 <div class="container">
                     <div class="columns is-vcentered">
     
                         <!-- Landing page Title -->
-                        <div class="column is-5 landing-caption">
+                        <div class="column is-5 landing-caption text-block">
                             <h1 class="title is-1 is-light is-semibold is-spaced main-title">BELISWAP</h1>
-                            <h2 class="subtitle is-5 is-light is-thin">
+                            <h2 class="subtitle is-5 is-light is-thin" style="color:white;">
                                 Become Legendary In Swapping with a fast-growing DeFi environment that allows you the best on the Binance Smart Chain. A simple and easy to use financial trading platform that you can access from your portable wallets.
                             </h2>
                             <!-- CTA -->
@@ -630,10 +611,9 @@
     <script>
         var slideIndex = [1,1,1];
         /* Class the members of each slideshow group with different CSS classes */
-        var slideId = ["mySlides1", "mySlides2", "mySlides3"]
+        var slideId = ["mySlides2", "mySlides3"]
         showSlides(1, 0);
         showSlides(1, 1);
-        showSlides(1, 2);
 
         function plusSlides(n, no) {
         showSlides(slideIndex[no] += n, no);
