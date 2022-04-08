@@ -80,16 +80,55 @@
             background-color: #555;
         }
     </style>
+
     <!-- Text Box -->
     <style>
         .text-block {
         position: relative;
-        bottom: 20px;
-        right: 20px;
-        background-color: rgba(0,0,0,0.1);
+        bottom: 0px;
+        right: 0px;
+        background-color: rgba(0,0,0,0.4);
         color: white;
         padding-left: 20px;
         padding-right: 20px;
+        }
+    </style>
+
+    <!-- Image Fade -->
+    <style>
+        /* Fading animation */
+        .fade {
+            -webkit-animation-name: fade;
+            -webkit-animation-duration: 1.5s;
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+
+        @-webkit-keyframes fade {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        @keyframes fade {
+            from {
+                opacity: .4
+            }
+
+            to {
+                opacity: 1
+            }
+        }
+
+        /* On smaller screens, decrease text size */
+        @media only screen and (max-width: 300px) {
+            .text {
+                font-size: 11px
+            }
         }
     </style>
 </head>
@@ -385,28 +424,29 @@
                         </div>
 
                         <!-- Feature image -->
-                        <div class="slideshow-container column is-7">
-                            <div class="mySlides3">
+                        <div class="slideshow-container column is-7" data-cycle="2000">
+                            <div class="mySlides fade">
                                 <img src="/img/slider/binancechain.png" style="width:50%">
                             </div>
-                            <div class="mySlides3">
+                            <div class="mySlides fade">
                                 <img src="/img/slider/math.png" style="width:50%">
                             </div>
-                            <div class="mySlides3">
+                            <div class="mySlides fade">
                                 <img src="/img/slider/metamask.png" style="width:50%">
                             </div>
-                            <div class="mySlides3">
+                            <div class="mySlides fade">
                                 <img src="/img/slider/safepal.png" style="width:50%">
                             </div>
-                            <div class="mySlides3">
+                            <div class="mySlides fade">
                                 <img src="/img/slider/trustwallet.png" style="width:50%">
                             </div>
-                            <div class="mySlides3">
+                            <div class="mySlides fade">
                                 <img src="/img/slider/walletconnect.png" style="width:50%">
                             </div>
-                        
-                            <a class="prev" onclick="plusSlides(-1, 2)">&#10094;</a>
-                            <a class="next" onclick="plusSlides(1, 2)">&#10095;</a>
+                            <!--
+                            <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
+                            <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
+                            -->
                         </div>
                     </div>
     
@@ -463,18 +503,19 @@
 
                     <div class="columns is-vcentered">
                         <!-- Feature image desktop -->
-                        <div class="slideshow-container column is-7 is-hidden-mobile">
+                        <div class="slideshow-container column is-7 is-hidden-mobile" data-cycle="2000">
                             <!--<img class="side-feature" src="/img/illustrations/media.svg" alt="">-->
-                            <div class="mySlides2">
+                            <div class="mySlides fade">
                                 <img src="/img/slider/Belipay_mobile_pay.png" style="width:50%">
                             </div>
                             
-                            <div class="mySlides2">
+                            <div class="mySlides fade">
                                 <img src="/img/slider/Belipay_mobile_donate.png" style="width:50%">
                             </div>
-                        
+                            <!--
                             <a class="prev" onclick="plusSlides(-1, 1)">&#10094;</a>
                             <a class="next" onclick="plusSlides(1, 1)">&#10095;</a>
+                            -->
                         </div>
     
                         <!-- Feature content -->
@@ -609,26 +650,36 @@
 
     <!-- Image Slider -->
     <script>
-        var slideIndex = [1,1,1];
-        /* Class the members of each slideshow group with different CSS classes */
-        var slideId = ["mySlides2", "mySlides3"]
-        showSlides(1, 0);
-        showSlides(1, 1);
+        /* Find all slideshow containers */
+        var slideshowContainers = document.getElementsByClassName("slideshow-container");
+        /* For each container get starting variables */
+        for(let s = 0; s < slideshowContainers.length; s++) {
+            /* Read the new data attribute */        
+            var cycle = slideshowContainers[s].dataset.cycle;
+            /* Find all the child nodes with class mySlides */
+            var slides = slideshowContainers[s].querySelectorAll('.mySlides');
+            var slideIndex = 0;
+            /* Now we can cycle slides, but this recursive function must have parameters */
+            /* slides and cycle never change, those are unique for each slide container */
+            /* slideIndex will increase during each iteration */
+            showSlides(slides, slideIndex, cycle);
+        };
 
-        function plusSlides(n, no) {
-        showSlides(slideIndex[no] += n, no);
-        }
-
-        function showSlides(n, no) {
-        var i;
-        var x = document.getElementsByClassName(slideId[no]);
-        if (n > x.length) {slideIndex[no] = 1}
-        if (n < 1) {slideIndex[no] = x.length}
-        for (i = 0; i < x.length; i++) {
-            x[i].style.display = "none";
-        }
-        x[slideIndex[no]-1].style.display = "block";
-        } 
+        /* Function is alsmost same, but now it uses 3 new parameters */
+        function showSlides(slides, slideIndex, cycle) {
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            };
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1
+            };
+            slides[slideIndex - 1].style.display = "block";
+            /* Calling same function, but with new parameters and cycle time */
+            setTimeout(function() {
+                showSlides(slides, slideIndex, cycle)
+            }, cycle);
+        };
     </script>
 
     <script>
