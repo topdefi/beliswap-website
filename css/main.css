@@ -14249,7 +14249,8 @@ body {
 
 .has-big-dark-gradient {
     /*background: url(../img/bg/gradient-left-darker.png) no-repeat top left, url(../img/bg/gradient-right-darker.png) no-repeat top right, # 1c004c*/
-    background: #454555
+    /*background: #454555*/
+    background-image: linear-gradient(to right top, #196cf4, #3964d4, #455cb5, #4a5597, #4a4e7a, #515376, #575871, #5d5d6d, #6f6f80, #828294, #9596a8, #a9aabc)
 }
 
 .cta-wrapper {
@@ -14391,7 +14392,8 @@ body {
 
 .token-wrapper {
     /*background: url(../img/bg/bg-token-top.png) no-repeat top center, url(../img/bg/bg-token-left.png) no-repeat top left, url(../img/bg/bg-token-bottom.png) no-repeat bottom right, # 1c004c*/
-    background: #454555
+    /*background: #454555*/
+    background-image: linear-gradient(to right top, #196cf4, #3964d4, #455cb5, #4a5597, #4a4e7a, #515376, #575871, #5d5d6d, #6f6f80, #828294, #9596a8, #a9aabc)
 }
 
 .token-wrapper .token-image img {
@@ -14623,7 +14625,8 @@ body {
 
 .roadmap-wrapper {
     /*background: url(../img/bg/bg-token-top.png) no-repeat top center, url(../img/bg/bg-token-left.png) no-repeat top left, url(../img/bg/bg-token-bottom.png) no-repeat bottom right, # 1c004c*/
-    background: #454555
+    /*background: #454555*/
+    background-image: linear-gradient(to right top, #196cf4, #3964d4, #455cb5, #4a5597, #4a4e7a, #515376, #575871, #5d5d6d, #6f6f80, #828294, #9596a8, #a9aabc)
 }
 
 .roadmap-wrapper .roadmap-image img {
