@@ -15,6 +15,73 @@
     <link rel="stylesheet" href="/css/app.css">
     <link rel="stylesheet" type="text/css" href="/css/main.css">
 
+    <!-- Image Slider Top -->
+    <style>
+        .cb-slideshow,
+        .cb-slideshow:after { 
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            left: 0px;
+            z-index: 0; 
+        }
+        .cb-slideshow:after { 
+            content: '';
+            background: transparent; 
+        }
+        .cb-slideshow li div { 
+            z-index: 1000;
+            position: absolute;
+            bottom: 30px;
+            left: 0px;
+            width: 100%;
+            text-align: center;
+            opacity: 0;
+            color: #fff;
+            animation: titleAnimation 6s linear infinite 0s; 
+        }
+        .cb-slideshow li div h3 { 
+            font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
+            font-size: 240px;
+            padding: 0;
+            line-height: 200px; 
+        }
+        .cb-slideshow li:nth-child(1) div { 
+            background-image: url(./img/bg.svg); 
+        }
+        .cb-slideshow li:nth-child(2) div { 
+            background-image: url(./img/bg2.svg);
+            animation-delay: 3s; 
+        }
+        @keyframes imageAnimation { 
+            0% { opacity: 0; animation-timing-function: ease-in; }
+            8% { opacity: 1; animation-timing-function: ease-out; }
+            17% { opacity: 1 }
+            25% { opacity: 0 }
+            100% { opacity: 0 }
+        }
+        @keyframes titleAnimation { 
+            0% { opacity: 0 }
+            8% { opacity: 1 }
+            17% { opacity: 1 }
+            19% { opacity: 0 }
+            100% { opacity: 0 }
+        }
+        .no-cssanimations .cb-slideshow li span{
+            opacity: 1;
+        }
+        @media screen and (max-width: 1140px) { 
+            .cb-slideshow li div h3 { font-size: 140px }
+        }
+        @media screen and (max-width: 600px) { 
+            .cb-slideshow li div h3 { font-size: 80px }
+            .hidden-mobile {
+                display: none;
+            }
+        }
+    </style>
+
     <!-- Image Slider -->
     <style>
         * {box-sizing: border-box}
@@ -288,12 +355,25 @@
             -->
     
             <!-- Hero Image and Title -->
-            <div class="hero-body" style="background-image: url('/img/bg/bg.svg');background-repeat: no-repeat;background-size: cover;background-attachment: scroll;background-position: center;background-size: 100%;">
+            <!--<div class="hero-body" style="background-image: url('/img/bg/bg.svg');background-repeat: no-repeat;background-size: cover;background-attachment: scroll;background-position: center;background-size: 100%;">-->
+            <div class="hero-body">
+                <ul class="cb-slideshow hidden-mobile">
+                    <li>
+                        <div>
+                            <img src="./img/bg/bg.svg" alt="BG 1"> 
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <img src="./img/bg/bg2.svg" alt="BG 2"> 
+                        </div>
+                    </li>
+                </ul>
                 <div class="container">
                     <div class="columns is-vcentered">
     
                         <!-- Landing page Title -->
-                        <div class="column is-5 landing-caption text-block">
+                        <div class="column is-5 landing-caption text-block" style="z-index:1;">
                             <h1 class="title is-1 is-light is-semibold is-spaced main-title">BELISWAP</h1>
                             <h2 class="subtitle is-5 is-light is-thin" style="color:white;">
                                 Become Legendary In Swapping with a fast-growing DeFi environment that allows you the best on the Binance Smart Chain. A simple and easy to use financial trading platform that you can access from your portable wallets.
@@ -309,9 +389,10 @@
                                     <span class="front-gradient"></span>
                                 </a>
                             </p>
-    
                         </div>
                         <!-- Hero image -->
+
+
 
                         <div class="column is-7">
                             <!--
