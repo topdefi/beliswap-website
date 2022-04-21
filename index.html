@@ -39,7 +39,7 @@
             text-align: center;
             opacity: 0;
             color: #fff;
-            animation: titleAnimation 6s linear infinite 0s; 
+            animation: titleAnimation 6s linear infinite 0s;
         }
         .cb-slideshow li div h3 { 
             font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
@@ -54,6 +54,7 @@
             background-image: url(./img/bg2.svg);
             animation-delay: 3s; 
         }
+        /*
         @keyframes imageAnimation { 
             0% { opacity: 0; animation-timing-function: ease-in; }
             8% { opacity: 1; animation-timing-function: ease-out; }
@@ -66,6 +67,21 @@
             8% { opacity: 1 }
             17% { opacity: 1 }
             19% { opacity: 0 }
+            100% { opacity: 0 }
+        }
+        */
+        @keyframes imageAnimation { 
+            0% { opacity: 0 }
+            25% { opacity: 1 }
+            50% { opacity: 1 }
+            60% { opacity: 0 }
+            100% { opacity: 0 }
+        }
+        @keyframes titleAnimation { 
+            0% { opacity: 0 }
+            25% { opacity: 1 }
+            50% { opacity: 1 }
+            60% { opacity: 0 }
             100% { opacity: 0 }
         }
         .no-cssanimations .cb-slideshow li span{
@@ -357,6 +373,7 @@
             <!-- Hero Image and Title -->
             <!--<div class="hero-body" style="background-image: url('/img/bg/bg.svg');background-repeat: no-repeat;background-size: cover;background-attachment: scroll;background-position: center;background-size: 100%;">-->
             <div class="hero-body">
+
                 <ul class="cb-slideshow hidden-mobile">
                     <li>
                         <div>
@@ -369,6 +386,7 @@
                         </div>
                     </li>
                 </ul>
+
                 <div class="container">
                     <div class="columns is-vcentered">
     
